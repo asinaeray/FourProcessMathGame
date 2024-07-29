@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Hadi Matematik</title>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="nav container">
+            <div class="logo">
+                <h2>Hadi Matematik</h2>
+            </div>
+            <input type="checkbox" id="nav_check">
+            <label for="nav_check" class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <div class="menubar">
+                <ul>
+                    <li><a href="index.html" style="background-color: white; color: black;">Oyunlar</a></li>
+                    <li><a href="hesapmakinesi.html">Hesap Makinesi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="kategoriler">
+        <div class="row">
+         <div class="col-md"><a href="toplama.html">+</a></div>
+          <div class="col-md"><a href="cikarma.html">-</a></div>
+          <div class="col-md"><a href="carpma.html">X</a></div>
+          <div class="col-md"><a href="bolme.html">/</a></div>
+        </div>
+      </div>
+     
+    <script src="../assets/js/bootstrap.js"></script>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const menubar = document.querySelector(".menubar");
+
+        hamburger.addEventListener("click", function() {
+            menubar.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

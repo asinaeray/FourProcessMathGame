@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/islemler.css">
+    <title>Carpma</title>
+</head>
+<body>
+    <div class="oyun-kutusu">
+        <div class="ic-kutu">
+            <span id="timer">Kalan süre : 50</span><br>
+            <span id="sayi1" class="deneme">0</span>
+            <span id="topla" class="deneme">x</span>
+            <span id="sayi2" class="deneme">0</span><br>
+            <input type="text" class="text"  placeholder="Cevabını Yaz" id="sonuc"><br>
+           
+            <label for="dogru" id="dogru" class="dogru">0</label>
+            <label for="yanlis" id="yanlis" class="yanlis">0</label><br>
+            <div class="makine">
+                <button class="btn" onclick="appkey('1')">1</button>
+                <button class="btn" onclick="appkey('2')">2</button>
+                <button class="btn" onclick="appkey('3')">3</button>
+                <button class="btn" onclick="appkey('4')">4</button>
+                <button class="btn" onclick="appkey('5')">5</button>
+                <button class="btn" onclick="appkey('6')">6</button>
+                <button class="btn" onclick="appkey('7')">7</button>
+                <button class="btn" onclick="appkey('8')">8</button>
+                <button class="btn" onclick="appkey('9')">9</button>
+                <button class="btn" onclick="appkey('0')">0</button><br>
+                <button class="delete-btn" onclick="deletebtn()" id="deletebtn">Temizle</button>
+                <button class="cevap-btn" onclick="cvpbtn()" id="cevapbtn">Cevapla</button><br>
+                <button class="basla-btn" onclick="basla()" id="basla">Başla</button>
+            </div>
+           
+        </div>
+        
+    </div>
+    <script>
+        let correct=0;
+        let incorrect=0;
+        let num1,num2;
+        let timerInterval;
+
+        function generateQuestion(){
+            num1=Math.floor(Math.random()*10)+1;
+            num2=Math.floor(Math.random()*10)+1;
+            document.getElementById('sayi1').innerText=num1;
+            document.getElementById('sayi2').innerText=num2;
+        }
+        
+        function checkAnswer() {
+            const answer = parseInt(document.getElementById('sonuc').value);
+            if (answer === num1 * num2) {
+                correct++;
+            } else {
+                incorrect++;
+            }
+            document.getElementById('dogru').innerText = correct;
+            document.getElementById('yanlis').innerText = incorrect;
+            document.getElementById('sonuc').value = '';
+            generateQuestion();
+        }
+        
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').innerText = `Kalan süre : ${timeLeft}`;
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById('sayi1').innerText = 'Süre';
+                    document.getElementById('topla').innerText=' ';
+                    document.getElementById('sayi2').innerText = 'Doldu!';
+                    document.getElementById('sonuc').disabled = true;
+                    document.querySelector('.cevap-btn').disabled = true;
+                    document.querySelector('.basla-btn').disabled = false;
+                }
+            }, 1000);
+        }
+        
+        function basla() {
+            correct = 0;
+            incorrect = 0;
+            timeLeft = 50;
+            document.getElementById('dogru').innerText = correct;
+            document.getElementById('yanlis').innerText = incorrect;
+            document.getElementById('sonuc').disabled = false;
+            document.querySelector('.cevap-btn').disabled = false;
+            document.querySelector('.basla-btn').disabled = true;
+            generateQuestion();
+            startTimer();
+        }
+        
+        document.querySelector('.cevap-btn').addEventListener('click', checkAnswer);
+        
+        const inpt = document.getElementById("sonuc");
+        function appkey(input) {
+            inpt.value += input;
+        }
+        function deletebtn() {
+            inpt.value = "";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oyun-kutusu {
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: #090436;
+    font-size: 30px;
+    text-align: center;
+    padding: 100px;
+    color: white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.text{
+    width: 300px;
+    height: 50px;
+    outline: none;
+    font-size: 50px;
+    border: 0;
+    margin-bottom: 20px;
+    background-color: #090436;
+    color: white;
+    text-align: center;
+}
+.basla-btn{
+    padding: 20px;
+    border: 0;
+    border-radius: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+.cevap-btn{
+    width: 120px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 100px;
+    border: 0;
+    background-color: white;
+    transition: background-color .5s;
+}
+.cevap-btn:hover{
+    background-color: rgb(208, 220, 247);
+    color: black;
+}
+.delete-btn{
+    width: 120px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 100px;
+    border: 0;
+    background-color: red;
+    color: white;
+    transition: background-color .5s;
+}
+.delete-btn:hover{
+    background-color: rgb(243, 103, 103);
+}
+label{
+    border-radius: 10px;
+
+
+}
+.dogru{
+    background-color: green;
+    padding: 20px;  
+   
+}
+.yanlis{
+    background-color: red;
+    padding: 20px;
+}
+.ic-kutu{
+    
+    margin: auto;
+    width: 400px
+}
+.makine{
+    margin-top: 50px;
+}
+
+.deneme{
+    font-size: 70px;
+}
+.btn{
+    padding: 20px;
+    border: 0;
+    border-radius: 50px;
+    background-color: white;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: aliceblue;
+}
